@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Constructora_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Alquiler">
+    <Key>
+      <PropertyRef Name="IdAlquiler" />
+    </Key>
+    <Property Name="IdAlquiler" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="FechaAlquiler" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="HorasAlquiladas" Type="Int32" Nullable="false" />
+    <Property Name="PagoHora" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="IdProyecto" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EntregaAlquilers" Relationship="Self.RefAlquiler23" FromRole="Alquiler" ToRole="EntregaAlquiler" />
+    <NavigationProperty Name="Proyecto" Relationship="Self.RefProyecto21" FromRole="Alquiler" ToRole="Proyecto" />
+  </EntityType>
+  <EntityType Name="Cargo">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Salario" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="CargoDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleadoes" Relationship="Self.RefCargo7" FromRole="Cargo" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Productoes" Relationship="Self.RefCategoria1" FromRole="Categoria" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="Compra">
+    <Key>
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdCompra" Type="Int32" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCompra" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="GastoTotal" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="IdProyecto" Type="Int32" />
+    <NavigationProperty Name="DetalleCompras" Relationship="Self.RefCompra19" FromRole="Compra" ToRole="DetalleCompra" />
+    <NavigationProperty Name="Proyecto" Relationship="Self.RefProyecto20" FromRole="Compra" ToRole="Proyecto" />
+  </EntityType>
+  <EntityType Name="DetalleCompra">
+    <Key>
+      <PropertyRef Name="IdProd" />
+      <PropertyRef Name="IdCompra" />
+    </Key>
+    <Property Name="IdProd" Type="Int32" Nullable="false" />
+    <Property Name="IdCompra" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="Precio" Type="Decimal" Precision="8" Scale="2" />
+    <NavigationProperty Name="Compra" Relationship="Self.RefCompra19" FromRole="DetalleCompra" ToRole="Compra" />
+    <NavigationProperty Name="Producto" Relationship="Self.RefProducto18" FromRole="DetalleCompra" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="DetalleEntrada">
+    <Key>
+      <PropertyRef Name="IdEntrada" />
+      <PropertyRef Name="IdProd" />
+    </Key>
+    <Property Name="IdEntrada" Type="Int32" Nullable="false" />
+    <Property Name="IdProd" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="DesEstado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Entrada_Inventario" Relationship="Self.RefEntrada_Inventario4" FromRole="DetalleEntrada" ToRole="Entrada_Inventario" />
+    <NavigationProperty Name="Producto" Relationship="Self.RefProducto5" FromRole="DetalleEntrada" ToRole="Producto" />
+  </EntityType>
+  <EntityType Name="DetalleSalida">
+    <Key>
+      <PropertyRef Name="IdProd" />
+      <PropertyRef Name="IdSalida" />
+    </Key>
+    <Property Name="IdProd" Type="Int32" Nullable="false" />
+    <Property Name="IdSalida" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="DesEstado" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Producto" Relationship="Self.RefProducto10" FromRole="DetalleSalida" ToRole="Producto" />
+    <NavigationProperty Name="Salida_Inventario" Relationship="Self.RefSalida_Inventario14" FromRole="DetalleSalida" ToRole="Salida_Inventario" />
+  </EntityType>
+  <EntityType Name="Empleado">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PrimerNombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SegundoNombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PrimerApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SegundoApellido" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="INSS" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipo" Type="Int32" Nullable="false" />
+    <Property Name="IdCargo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Cargo" Relationship="Self.RefCargo7" FromRole="Empleado" ToRole="Cargo" />
+    <NavigationProperty Name="Salida_Inventario" Relationship="Self.RefEmpleado11" FromRole="Empleado" ToRole="Salida_Inventario" />
+    <NavigationProperty Name="Proyectoes" Relationship="Self.RefEmpleado16" FromRole="Empleado" ToRole="Proyecto" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.RefEmpleado25" FromRole="Empleado" ToRole="Usuarios" />
+    <NavigationProperty Name="TipoEmpleado" Relationship="Self.RefTipoEmpleado6" FromRole="Empleado" ToRole="TipoEmpleado" />
+  </EntityType>
+  <EntityType Name="Entrada_Inventario">
+    <Key>
+      <PropertyRef Name="IdEntrada" />
+    </Key>
+    <Property Name="IdEntrada" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaEntrada" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdSalida" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DetalleEntradas" Relationship="Self.RefEntrada_Inventario4" FromRole="Entrada_Inventario" ToRole="DetalleEntrada" />
+    <NavigationProperty Name="Salida_Inventario" Relationship="Self.RefSalida_Inventario12" FromRole="Entrada_Inventario" ToRole="Salida_Inventario" />
+  </EntityType>
+  <EntityType Name="EntregaAlquiler">
+    <Key>
+      <PropertyRef Name="IdEntregaAlquiler" />
+    </Key>
+    <Property Name="IdEntregaAlquiler" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HorasExcedidas" Type="Int32" Nullable="false" />
+    <Property Name="PagoFinal" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="IdAlquiler" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Alquiler" Relationship="Self.RefAlquiler23" FromRole="EntregaAlquiler" ToRole="Alquiler" />
+  </EntityType>
+  <EntityType Name="Planilla">
+    <Key>
+      <PropertyRef Name="IdPlanilla" />
+    </Key>
+    <Property Name="IdPlanilla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Presupuesto" Type="Decimal" Precision="10" Scale="2" Nullable="true" />
+    <Property Name="MontoACobrar" Type="Decimal" Precision="10" Scale="2" Nullable="true" />
+    <Property Name="FueraDelPresupuesto" Type="Decimal" Precision="10" Scale="2" Nullable="true" />
+    <NavigationProperty Name="Proyectoes" Relationship="Self.RefPlanilla24" FromRole="Planilla" ToRole="Proyecto" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="IdProd" />
+    </Key>
+    <Property Name="IdProd" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Estado" Type="Int32" Nullable="false" />
+    <Property Name="Cantidad" Type="Int32" Nullable="false" />
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Categoria" Relationship="Self.RefCategoria1" FromRole="Producto" ToRole="Categoria" />
+    <NavigationProperty Name="DetalleCompras" Relationship="Self.RefProducto18" FromRole="Producto" ToRole="DetalleCompra" />
+    <NavigationProperty Name="DetalleEntradas" Relationship="Self.RefProducto5" FromRole="Producto" ToRole="DetalleEntrada" />
+    <NavigationProperty Name="DetalleSalidas" Relationship="Self.RefProducto10" FromRole="Producto" ToRole="DetalleSalida" />
+  </EntityType>
+  <EntityType Name="Proyecto">
+    <Key>
+      <PropertyRef Name="IdProyecto" />
+    </Key>
+    <Property Name="IdProyecto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaInicio" Type="DateTime" Precision="0" Nullable="true" />
+    <Property Name="FechaFinalizacion" Type="DateTime" Precision="0" Nullable="true" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombreB" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="true" />
+    <Property Name="IdEmpleadoAsignado" Type="Int32" Nullable="false" />
+    <Property Name="IdPlanilla" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Alquilers" Relationship="Self.RefProyecto21" FromRole="Proyecto" ToRole="Alquiler" />
+    <NavigationProperty Name="Compras" Relationship="Self.RefProyecto20" FromRole="Proyecto" ToRole="Compra" />
+    <NavigationProperty Name="Empleado" Relationship="Self.RefEmpleado16" FromRole="Proyecto" ToRole="Empleado" />
+    <NavigationProperty Name="Planilla" Relationship="Self.RefPlanilla24" FromRole="Proyecto" ToRole="Planilla" />
+    <NavigationProperty Name="Salida_Inventario" Relationship="Self.RefProyecto17" FromRole="Proyecto" ToRole="Salida_Inventario" />
+  </EntityType>
+  <EntityType Name="Salida_Inventario">
+    <Key>
+      <PropertyRef Name="IdSalida" />
+    </Key>
+    <Property Name="IdSalida" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaSalida" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="IdProyecto" Type="Int32" />
+    <NavigationProperty Name="DetalleSalidas" Relationship="Self.RefSalida_Inventario14" FromRole="Salida_Inventario" ToRole="DetalleSalida" />
+    <NavigationProperty Name="Empleado" Relationship="Self.RefEmpleado11" FromRole="Salida_Inventario" ToRole="Empleado" />
+    <NavigationProperty Name="Entrada_Inventario" Relationship="Self.RefSalida_Inventario12" FromRole="Salida_Inventario" ToRole="Entrada_Inventario" />
+    <NavigationProperty Name="Proyecto" Relationship="Self.RefProyecto17" FromRole="Salida_Inventario" ToRole="Proyecto" />
+  </EntityType>
+  <EntityType Name="TipoEmpleado">
+    <Key>
+      <PropertyRef Name="IdTipo" />
+    </Key>
+    <Property Name="IdTipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleadoes" Relationship="Self.RefTipoEmpleado6" FromRole="TipoEmpleado" ToRole="Empleado" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="NomUsuario" />
+    </Key>
+    <Property Name="NomUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Contraseña" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Empleado" Relationship="Self.RefEmpleado25" FromRole="Usuarios" ToRole="Empleado" />
+    <Property Name="NivelPermiso" Type="Int32" />
+  </EntityType>
+  <Association Name="RefAlquiler23">
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="1" />
+    <End Role="EntregaAlquiler" Type="Self.EntregaAlquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Alquiler">
+        <PropertyRef Name="IdAlquiler" />
+      </Principal>
+      <Dependent Role="EntregaAlquiler">
+        <PropertyRef Name="IdAlquiler" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProyecto21">
+    <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="1" />
+    <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyecto">
+        <PropertyRef Name="IdProyecto" />
+      </Principal>
+      <Dependent Role="Alquiler">
+        <PropertyRef Name="IdProyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefCargo7">
+    <End Role="Cargo" Type="Self.Cargo" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargo">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefCategoria1">
+    <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+    <End Role="Producto" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categoria">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefCompra19">
+    <End Role="Compra" Type="Self.Compra" Multiplicity="1" />
+    <End Role="DetalleCompra" Type="Self.DetalleCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Compra">
+        <PropertyRef Name="IdCompra" />
+      </Principal>
+      <Dependent Role="DetalleCompra">
+        <PropertyRef Name="IdCompra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProyecto20">
+    <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="0..1" />
+    <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyecto">
+        <PropertyRef Name="IdProyecto" />
+      </Principal>
+      <Dependent Role="Compra">
+        <PropertyRef Name="IdProyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProducto18">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetalleCompra" Type="Self.DetalleCompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProd" />
+      </Principal>
+      <Dependent Role="DetalleCompra">
+        <PropertyRef Name="IdProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefEntrada_Inventario4">
+    <End Role="Entrada_Inventario" Type="Self.Entrada_Inventario" Multiplicity="1" />
+    <End Role="DetalleEntrada" Type="Self.DetalleEntrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Entrada_Inventario">
+        <PropertyRef Name="IdEntrada" />
+      </Principal>
+      <Dependent Role="DetalleEntrada">
+        <PropertyRef Name="IdEntrada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProducto5">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetalleEntrada" Type="Self.DetalleEntrada" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProd" />
+      </Principal>
+      <Dependent Role="DetalleEntrada">
+        <PropertyRef Name="IdProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProducto10">
+    <End Role="Producto" Type="Self.Producto" Multiplicity="1" />
+    <End Role="DetalleSalida" Type="Self.DetalleSalida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Producto">
+        <PropertyRef Name="IdProd" />
+      </Principal>
+      <Dependent Role="DetalleSalida">
+        <PropertyRef Name="IdProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefSalida_Inventario14">
+    <End Role="Salida_Inventario" Type="Self.Salida_Inventario" Multiplicity="1" />
+    <End Role="DetalleSalida" Type="Self.DetalleSalida" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salida_Inventario">
+        <PropertyRef Name="IdSalida" />
+      </Principal>
+      <Dependent Role="DetalleSalida">
+        <PropertyRef Name="IdSalida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefEmpleado11">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Salida_Inventario" Type="Self.Salida_Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="Salida_Inventario">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefEmpleado16">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="Proyecto">
+        <PropertyRef Name="IdEmpleadoAsignado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefEmpleado25">
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="1" />
+    <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleado">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefTipoEmpleado6">
+    <End Role="TipoEmpleado" Type="Self.TipoEmpleado" Multiplicity="1" />
+    <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoEmpleado">
+        <PropertyRef Name="IdTipo" />
+      </Principal>
+      <Dependent Role="Empleado">
+        <PropertyRef Name="IdTipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefSalida_Inventario12">
+    <End Role="Salida_Inventario" Type="Self.Salida_Inventario" Multiplicity="1" />
+    <End Role="Entrada_Inventario" Type="Self.Entrada_Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salida_Inventario">
+        <PropertyRef Name="IdSalida" />
+      </Principal>
+      <Dependent Role="Entrada_Inventario">
+        <PropertyRef Name="IdSalida" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPlanilla24">
+    <End Role="Planilla" Type="Self.Planilla" Multiplicity="1" />
+    <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Planilla">
+        <PropertyRef Name="IdPlanilla" />
+      </Principal>
+      <Dependent Role="Proyecto">
+        <PropertyRef Name="IdPlanilla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProyecto17">
+    <End Role="Proyecto" Type="Self.Proyecto" Multiplicity="0..1" />
+    <End Role="Salida_Inventario" Type="Self.Salida_Inventario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proyecto">
+        <PropertyRef Name="IdProyecto" />
+      </Principal>
+      <Dependent Role="Salida_Inventario">
+        <PropertyRef Name="IdProyecto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ConstructoraEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Alquilers" EntityType="Self.Alquiler" />
+    <EntitySet Name="Cargoes" EntityType="Self.Cargo" />
+    <EntitySet Name="Categorias" EntityType="Self.Categoria" />
+    <EntitySet Name="Compras" EntityType="Self.Compra" />
+    <EntitySet Name="DetalleCompras" EntityType="Self.DetalleCompra" />
+    <EntitySet Name="DetalleEntradas" EntityType="Self.DetalleEntrada" />
+    <EntitySet Name="DetalleSalidas" EntityType="Self.DetalleSalida" />
+    <EntitySet Name="Empleadoes" EntityType="Self.Empleado" />
+    <EntitySet Name="Entrada_Inventario" EntityType="Self.Entrada_Inventario" />
+    <EntitySet Name="EntregaAlquilers" EntityType="Self.EntregaAlquiler" />
+    <EntitySet Name="Planillas" EntityType="Self.Planilla" />
+    <EntitySet Name="Productoes" EntityType="Self.Producto" />
+    <EntitySet Name="Proyectoes" EntityType="Self.Proyecto" />
+    <EntitySet Name="Salida_Inventario" EntityType="Self.Salida_Inventario" />
+    <EntitySet Name="TipoEmpleadoes" EntityType="Self.TipoEmpleado" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+    <AssociationSet Name="RefAlquiler23" Association="Self.RefAlquiler23">
+      <End Role="Alquiler" EntitySet="Alquilers" />
+      <End Role="EntregaAlquiler" EntitySet="EntregaAlquilers" />
+    </AssociationSet>
+    <AssociationSet Name="RefProyecto21" Association="Self.RefProyecto21">
+      <End Role="Proyecto" EntitySet="Proyectoes" />
+      <End Role="Alquiler" EntitySet="Alquilers" />
+    </AssociationSet>
+    <AssociationSet Name="RefCargo7" Association="Self.RefCargo7">
+      <End Role="Cargo" EntitySet="Cargoes" />
+      <End Role="Empleado" EntitySet="Empleadoes" />
+    </AssociationSet>
+    <AssociationSet Name="RefCategoria1" Association="Self.RefCategoria1">
+      <End Role="Categoria" EntitySet="Categorias" />
+      <End Role="Producto" EntitySet="Productoes" />
+    </AssociationSet>
+    <AssociationSet Name="RefCompra19" Association="Self.RefCompra19">
+      <End Role="Compra" EntitySet="Compras" />
+      <End Role="DetalleCompra" EntitySet="DetalleCompras" />
+    </AssociationSet>
+    <AssociationSet Name="RefProyecto20" Association="Self.RefProyecto20">
+      <End Role="Proyecto" EntitySet="Proyectoes" />
+      <End Role="Compra" EntitySet="Compras" />
+    </AssociationSet>
+    <AssociationSet Name="RefProducto18" Association="Self.RefProducto18">
+      <End Role="Producto" EntitySet="Productoes" />
+      <End Role="DetalleCompra" EntitySet="DetalleCompras" />
+    </AssociationSet>
+    <AssociationSet Name="RefEntrada_Inventario4" Association="Self.RefEntrada_Inventario4">
+      <End Role="Entrada_Inventario" EntitySet="Entrada_Inventario" />
+      <End Role="DetalleEntrada" EntitySet="DetalleEntradas" />
+    </AssociationSet>
+    <AssociationSet Name="RefProducto5" Association="Self.RefProducto5">
+      <End Role="Producto" EntitySet="Productoes" />
+      <End Role="DetalleEntrada" EntitySet="DetalleEntradas" />
+    </AssociationSet>
+    <AssociationSet Name="RefProducto10" Association="Self.RefProducto10">
+      <End Role="Producto" EntitySet="Productoes" />
+      <End Role="DetalleSalida" EntitySet="DetalleSalidas" />
+    </AssociationSet>
+    <AssociationSet Name="RefSalida_Inventario14" Association="Self.RefSalida_Inventario14">
+      <End Role="Salida_Inventario" EntitySet="Salida_Inventario" />
+      <End Role="DetalleSalida" EntitySet="DetalleSalidas" />
+    </AssociationSet>
+    <AssociationSet Name="RefEmpleado11" Association="Self.RefEmpleado11">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="Salida_Inventario" EntitySet="Salida_Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="RefEmpleado16" Association="Self.RefEmpleado16">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="Proyecto" EntitySet="Proyectoes" />
+    </AssociationSet>
+    <AssociationSet Name="RefEmpleado25" Association="Self.RefEmpleado25">
+      <End Role="Empleado" EntitySet="Empleadoes" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+    <AssociationSet Name="RefTipoEmpleado6" Association="Self.RefTipoEmpleado6">
+      <End Role="TipoEmpleado" EntitySet="TipoEmpleadoes" />
+      <End Role="Empleado" EntitySet="Empleadoes" />
+    </AssociationSet>
+    <AssociationSet Name="RefSalida_Inventario12" Association="Self.RefSalida_Inventario12">
+      <End Role="Salida_Inventario" EntitySet="Salida_Inventario" />
+      <End Role="Entrada_Inventario" EntitySet="Entrada_Inventario" />
+    </AssociationSet>
+    <AssociationSet Name="RefPlanilla24" Association="Self.RefPlanilla24">
+      <End Role="Planilla" EntitySet="Planillas" />
+      <End Role="Proyecto" EntitySet="Proyectoes" />
+    </AssociationSet>
+    <AssociationSet Name="RefProyecto17" Association="Self.RefProyecto17">
+      <End Role="Proyecto" EntitySet="Proyectoes" />
+      <End Role="Salida_Inventario" EntitySet="Salida_Inventario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

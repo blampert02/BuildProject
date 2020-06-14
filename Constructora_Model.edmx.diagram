@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9c81c0f6119b45c2b7d7b5be2fede0bb" Name="Diagram1">
+        <EntityTypeShape EntityType="Constructora_Model.Alquiler" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Cargo" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Categoria" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Compra" Width="1.5" PointX="7.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.DetalleCompra" Width="1.5" PointX="9.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.DetalleEntrada" Width="1.5" PointX="12" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.DetalleSalida" Width="1.5" PointX="9.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Empleado" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Entrada_Inventario" Width="1.5" PointX="9.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.EntregaAlquiler" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Planilla" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Producto" Width="1.5" PointX="7.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Proyecto" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Salida_Inventario" Width="1.5" PointX="7.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.TipoEmpleado" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Constructora_Model.Usuario" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <AssociationConnector Association="Constructora_Model.RefAlquiler23" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefProyecto21" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefCargo7" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefCategoria1" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefCompra19" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefProyecto20" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefProducto18" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefEntrada_Inventario4" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefProducto5" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefProducto10" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefSalida_Inventario14" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefEmpleado11" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefEmpleado16" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefEmpleado25" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefTipoEmpleado6" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefSalida_Inventario12" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefPlanilla24" ManuallyRouted="false" />
+        <AssociationConnector Association="Constructora_Model.RefProyecto17" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
