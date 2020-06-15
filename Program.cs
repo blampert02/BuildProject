@@ -17,7 +17,11 @@ namespace RTCONSTRUCCIONES
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPrincipal());
-            //DEMOSTRACION DE QUE SI ESTÁ BUENO
+            
+            //:DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
+                
+                //sim JAJAJAJAJA ahora con esto en la tuya
         }
     }
 }
