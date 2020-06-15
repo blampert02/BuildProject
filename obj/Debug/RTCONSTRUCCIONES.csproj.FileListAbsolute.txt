@@ -75,3 +75,22 @@ D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.cspr
 D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.csproj.CopyComplete
 D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.exe
 D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.pdb
+D:\Jefdalé\Nueva carpeta\BuildProject\bin\Debug\RTCONSTRUCCIONES.exe.config
+D:\Jefdalé\Nueva carpeta\BuildProject\bin\Debug\RTCONSTRUCCIONES.exe
+D:\Jefdalé\Nueva carpeta\BuildProject\bin\Debug\RTCONSTRUCCIONES.pdb
+D:\Jefdalé\Nueva carpeta\BuildProject\bin\Debug\EntityFramework.xml
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.csprojAssemblyReference.cache
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmCargo.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmCategoria.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmEmpleado.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmProductos.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmProyecto.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmTipoEmpleado.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.frmPrincipal.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.IniciarSesion.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.Properties.Resources.resources
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.csproj.GenerateResource.cache
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.csproj.CoreCompileInputs.cache
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.csproj.CopyComplete
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.exe
+D:\Jefdalé\Nueva carpeta\BuildProject\obj\Debug\RTCONSTRUCCIONES.pdb
