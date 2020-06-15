@@ -56,3 +56,22 @@ D:\Jefdalé\Nueva carpeta\RTCONSTRUCCIONES\RTCONSTRUCCIONES\obj\Debug\RTCONSTRUC
 D:\Jefdalé\Nueva carpeta\RTCONSTRUCCIONES\RTCONSTRUCCIONES\obj\Debug\RTCONSTRUCCIONES.csproj.CopyComplete
 D:\Jefdalé\Nueva carpeta\RTCONSTRUCCIONES\RTCONSTRUCCIONES\obj\Debug\RTCONSTRUCCIONES.exe
 D:\Jefdalé\Nueva carpeta\RTCONSTRUCCIONES\RTCONSTRUCCIONES\obj\Debug\RTCONSTRUCCIONES.pdb
+D:\Documents\visual-studio-projects\BuildProject\bin\Debug\RTCONSTRUCCIONES.exe.config
+D:\Documents\visual-studio-projects\BuildProject\bin\Debug\RTCONSTRUCCIONES.exe
+D:\Documents\visual-studio-projects\BuildProject\bin\Debug\RTCONSTRUCCIONES.pdb
+D:\Documents\visual-studio-projects\BuildProject\bin\Debug\EntityFramework.xml
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.csprojAssemblyReference.cache
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmCargo.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmCategoria.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmEmpleado.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmProductos.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmProyecto.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.Catalogo.frmTipoEmpleado.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.frmPrincipal.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.IniciarSesion.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.Properties.Resources.resources
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.csproj.GenerateResource.cache
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.csproj.CoreCompileInputs.cache
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.csproj.CopyComplete
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.exe
+D:\Documents\visual-studio-projects\BuildProject\obj\Debug\RTCONSTRUCCIONES.pdb
